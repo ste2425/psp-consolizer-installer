@@ -1,0 +1,12 @@
+#logs {
+    background-color: var(--bs-gray-200);
+    overflow: auto;
+}
+
+#logs pre:first-child {
+    margin-top: 0 !important;
+}
+
+#logs pre {
+    margin: 0px;
+}

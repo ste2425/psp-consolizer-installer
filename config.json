@@ -1,0 +1,5 @@
+{
+    "firmwareBinary": "bluepad32-nina.bin",
+    "expectedFirmwareVersionText": "Bluepad32 for NINA v3.5-rc0",
+    "pspConsoliserBinary": "PSP-Bluetooth-Controller.ino.bin"
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <script src="browserWindow.js"></script>
+    <title>PSP Consolizer Programmer</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="browserWindow.css">
+  </head>
+  <body class="container h-100 ">
+    <div id="program-page" class="d-flex flex-column h-100">
+      <div class="pt-2 pb-2 d-flex align-items-center">
+        <button type="button" class="btn btn-primary" id="program">Program</button>
+        <div id="completionStatus" class="ps-2"></div>
+      </div>
+      <div id="logs" class="h-100 border rounded border-secondary p-2 mb-2"></div>
+    </div>
+
+    <div class="modal fade show d-block" id="welcomeModal" tabindex="-1">
+      <div class="modal-dialog modal-fullscreen" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">PSP Consolizer Programmer</h5>
+          </div>
+          <div class="modal-body d-flex flex-column">
+            <div class="h-100">              
+              <p>
+                This tool will program your Arduino and NINA in one click without the need to install the Arduino IDE or any other tools.
+              </p>
+
+              <p>
+                Please do the following before continuing:
+              </p>
+
+              <ol>
+                <li>
+                  If the Arduino is within an assembled PSP Consolizer ensure mains power is provided.
+                </li>
+                <ul>
+                  <li>If you cannot provide power disconenct the jumper labeled <em>PROG TGGL 1</em> or disconnect the power cable to the PSP</li>
+                </ul>
+                <li>Connect the Arduino to your PC</li>
+              </ol>
+            </div>
+
+            <div class="alert alert-info">
+              Disconnecting the <em>PROG TGGL 1</em> or the PSP's power connector is to stop the Arduino attempting to power the PSP via its USB source.
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Lets go</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-backdrop fade show d-block"></div>
+  </body>
+</html>
