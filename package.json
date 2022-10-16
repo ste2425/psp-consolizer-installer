@@ -15,7 +15,7 @@
     "copy": "node copyAssets.js",
     "build": "rm -rf dist && tsc && yarn copy",
     "start": "yarn build && electron dist/main.js",
-    "package": "node prepackage.js && rm -rf build && yarn build && electron-builder",
+    "package": "node prepackage.js && rm -rf build && yarn build && electron-builder --publish=never",
     "arduino": "./arduino-cli.exe",
     "arduinoFirmware": "./arduino-fwuploader.exe",
     "builder": "electron-builder"
