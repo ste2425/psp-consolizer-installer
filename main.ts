@@ -1,5 +1,6 @@
 import { app, BrowserWindow, ipcMain } from "electron";
 import path from 'path';
+import config from './config.json';
 
 import {
   buildPath,
@@ -46,12 +47,22 @@ function createWindow() {
   });
 
   ipcMain.handle('program', program);
+
+  ipcMain.handle('versions', versions);
 }
 
 app.whenReady()
   .then(() => createWindow());
 
 app.on('window-all-closed', () => app.quit());
+
+function versions() {
+  return {
+    bluePad: config.expectedFirmwareVersionText,
+    sha: config.commitsha,
+    message: config.commitMessage
+  };
+}
 
 async function program() {
   log('--Installing SAMD core\n');

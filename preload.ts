@@ -9,5 +9,8 @@ contextBridge.exposeInMainWorld('mainAPI', {
     },
     onLogError(cb: (event: IpcRendererEvent, ...messages: string[]) => void) {
         ipcRenderer.on('log:error', cb);
+    },
+    get versions() {
+        return ipcRenderer.invoke('versions');
     }
 });

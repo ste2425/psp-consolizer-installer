@@ -7,7 +7,9 @@ const consolizerBinExists = fs.pathExistsSync(
 
 const config = fs.readFileSync("config.json").toString();
 
-const configVersionSet = !config.includes("<changeme>");
+const configVersionSet = !config.includes("<changeme>"),
+  commitShaSet = !config.includes("<commitsha>"),
+  commitMessageSet = !config.includes("<commitmessage>");
 
 if (!consolizerBinExists)
   console.error(
@@ -19,5 +21,15 @@ if (!bluepadBinExists)
 
 if (!configVersionSet) console.error("\nBluepad32 version not set in config\n");
 
-if (!consolizerBinExists || !bluepadBinExists || !configVersionSet)
+if (!commitShaSet) console.error("\nCommit SHA not set in config\n");
+
+if (!commitMessageSet) console.error("\nCommit Message not set in config\n");
+
+if (
+  !consolizerBinExists ||
+  !bluepadBinExists ||
+  !configVersionSet ||
+  !commitShaSet ||
+  !commitMessageSet
+)
   process.exit(1);

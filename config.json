@@ -1,5 +1,7 @@
 {
     "firmwareBinary": "bluepad32-nina.bin",
     "expectedFirmwareVersionText": "<changeme>",
+    "commitMessage": "<commitmessage>",
+    "commitsha": "<commitsha>",
     "pspConsoliserBinary": "PSP-Bluetooth-Controller.ino.bin"
 }

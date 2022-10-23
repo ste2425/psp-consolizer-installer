@@ -24,7 +24,7 @@
             <h5 class="modal-title" id="exampleModalLabel">PSP Consolizer Programmer</h5>
           </div>
           <div class="modal-body d-flex flex-column">
-            <div class="h-100">              
+            <div class="h-100">      
               <p>
                 This tool will program your Arduino and NINA in one click without the need to install the Arduino IDE or any other tools.
               </p>
@@ -44,8 +44,17 @@
               </ol>
             </div>
 
-            <div class="alert alert-info">
-              Disconnecting the <em>PROG TGGL 1</em> or the PSP's power connector is to stop the Arduino attempting to power the PSP via its USB source.
+            <div class="card m2">
+              <div class="card-body">
+                <h5 class="card-title">Whats in this release</h5>
+                <p class="card-text">                  
+                  <em>Bluepad32 version:</em> <span id="bluePadVersion"></span>
+                </p>
+                <p class="card-text">                  
+                  <em>PSP Consolizer sha:</em> <span id="commitSha"></span>
+                </p>
+                <p class="card-text" id="commitMessage"></p>
+              </div>
             </div>
           </div>
           <div class="modal-footer">

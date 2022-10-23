@@ -1,7 +1,16 @@
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', async () => {
     const button = document.querySelector('#program'),
         logs = document.querySelector('#logs'),
-        completionStatus = document.querySelector('#completionStatus');
+        completionStatus = document.querySelector('#completionStatus'),
+        bpVersion = document.querySelector('#bluePadVersion'),
+        commitMessage = document.querySelector('#commitMessage'),
+        commitSha = document.querySelector('#commitSha');
+
+    const versions = await window.mainAPI.versions;
+
+    bpVersion && (bpVersion.textContent = versions.bluePad);
+    commitMessage && (commitMessage.textContent = versions.message);
+    commitSha && (commitSha.textContent = versions.sha);
 
     const modalBtn = document.querySelector('.modal button');
 
